@@ -128,29 +128,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43725728}
-  - component: {fileID: 43725727}
+  - component: {fileID: 43725729}
   m_Layer: 0
-  m_Name: Spawner Pylon
+  m_Name: Spawner Pylon Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &43725727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43725726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8105be71f279d474ca45544476c8fa92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylons
-  pylonSpawnPosition: {x: 10, y: 0}
-  newPylonDistance: 5
-  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
 --- !u!4 &43725728
 Transform:
   m_ObjectHideFlags: 0
@@ -160,12 +145,29 @@ Transform:
   m_GameObject: {fileID: 43725726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43725729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43725726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e6afe221ecc5d46aa2dbc2de06164c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylonsMiddle
+  pylonSpawnPosition: {x: 10, y: 0}
+  newPylonDistance: 15
+  offset: 0
+  player: {fileID: 8262451821812439019}
+  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &560007253
 Transform:
   m_ObjectHideFlags: 0
@@ -440,6 +442,104 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &849925227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849925229}
+  - component: {fileID: 849925230}
+  m_Layer: 0
+  m_Name: Spawner Pylon Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849925229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849925227}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849925230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849925227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2778125e999e1a84db5482be42a0d823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylonsTop
+  pylonSpawnPosition: {x: 10, y: 4.5}
+  newPylonDistance: 15
+  offset: 0
+  player: {fileID: 8262451821812439019}
+  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
+--- !u!1 &898203959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898203961}
+  - component: {fileID: 898203962}
+  m_Layer: 0
+  m_Name: Spawner Pylon Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898203961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898203959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: -4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898203962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898203959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0badea34a2031964f8af8c93fa9e17c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylonsBottom
+  pylonSpawnPosition: {x: 10, y: -4.5}
+  newPylonDistance: 15
+  offset: 0
+  player: {fileID: 8262451821812439019}
+  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
 --- !u!1 &1510991622
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1510991624
 Transform:
   m_ObjectHideFlags: 0
@@ -735,15 +835,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a8f01153ff5d846af502f8f891240a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  forwardSpeed: 10
-  reverseSpeed: 10
+  forwardSpeed: 20
+  reverseSpeed: 20
   currentSpeed: 0
   decelerate: 4
   speedLimit: 10
-  turnSpeed: 150
+  turnSpeed: 270
   startPosition: {x: -6, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: -90}
   directionalInput: {x: 0, y: 0}
+  crashDistance: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -754,3 +855,5 @@ SceneRoots:
   - {fileID: 1510991624}
   - {fileID: 560007253}
   - {fileID: 43725728}
+  - {fileID: 898203961}
+  - {fileID: 849925229}
