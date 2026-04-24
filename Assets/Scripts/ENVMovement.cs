@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ENVMovement : MonoBehaviour
 {
+    private Player playerScript;
+
     public float currentSpeedENV;
     public float moveSpeedENV;
     public float playerSpeed;
@@ -10,22 +12,23 @@ public class ENVMovement : MonoBehaviour
     public int xMax;
     void Start()
     {
-
+        playerScript = FindFirstObjectByType<Player>();
     }
-
-
-
+    
     void Update()
-    {     
+    {
         currentSpeedENV = Time.deltaTime * moveSpeedENV;
 
-        transform.position -= currentSpeedENV * transform.right;
+        if (playerScript.currentSpeed < 0)
+        {
+            playerSpeed = 0;
+        }
 
-        //Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        transform.position -= (Time.deltaTime * playerScript.currentSpeed * transform.right) * playerSpeed + currentSpeedENV * transform.right;
 
         if (transform.position.x < 0 - xMin || transform.position.x > Screen.width + xMax)
         {
             Destroy(gameObject);
-        }        
+        }
     }
 }

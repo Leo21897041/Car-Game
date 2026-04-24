@@ -8,7 +8,7 @@ public class SpawnerPylonsBottom : MonoBehaviour
     //public Transform player;
 
     public GameObject pylonPrefab;
-    private GameObject spawnedPylon;
+    public GameObject spawnedPylon;
 
     public bool isStartButton;
     public GameObject startButton;

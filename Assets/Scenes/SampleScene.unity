@@ -166,6 +166,7 @@ MonoBehaviour:
   newPylonDistance: 25
   offset: 0
   pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
+  spawnedPylon: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
   isStartButton: 0
   startButton: {fileID: 1830775389}
 --- !u!1 &167896764
@@ -338,7 +339,7 @@ MonoBehaviour:
   score: 0
   playerScript: {fileID: 9184152539970634752}
   isStartButton: 0
-  startButton: {fileID: 0}
+  startButton: {fileID: 1830775389}
 --- !u!4 &200701076
 Transform:
   m_ObjectHideFlags: 0
@@ -677,6 +678,7 @@ MonoBehaviour:
   newPylonDistance: 25
   offset: 0
   pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
+  spawnedPylon: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
   isStartButton: 0
   startButton: {fileID: 1830775389}
 --- !u!1 &898203959
@@ -726,6 +728,7 @@ MonoBehaviour:
   newPylonDistance: 25
   offset: 0
   pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
+  spawnedPylon: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
   isStartButton: 0
   startButton: {fileID: 1830775389}
 --- !u!1 &1022658302
@@ -1538,27 +1541,27 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 12.982553
-      outSlope: 12.982553
+      inSlope: 17.065958
+      outSlope: 17.065958
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.1027778
+      outWeight: 0.15896715
     - serializedVersion: 3
       time: 1
-      value: 4
-      inSlope: 0.17883563
-      outSlope: 0.17883563
+      value: 0
+      inSlope: 18.4355
+      outSlope: 18.4355
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.20993853
+      inWeight: 0.16154855
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   stunSpeed: 0
   progressStun: 0
-  durationStun: 1
+  durationStun: 0.5
   isStunned: 0
 --- !u!50 &9184152539970634753
 Rigidbody2D:
