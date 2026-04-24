@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,8 @@ public class Player : MonoBehaviour
     public float reverseSpeed;
     public float currentSpeed;
     public float decelerate;
-    public float speedLimit;
+    public float speedLimitMax;
+    public float speedLimitMin;
     public float turnSpeed;
 
     Vector3 currentPosition;
@@ -17,8 +19,11 @@ public class Player : MonoBehaviour
     
     public Vector2 directionalInput;
 
-    private CarObstacles carObstaclesScript;
-    public float crashDistance;
+    public AnimationCurve stunCurve;
+    public float stunSpeed;
+    public float progressStun;
+    public float durationStun;
+    public bool isStunned;
 
     void Start()
     {
@@ -26,9 +31,23 @@ public class Player : MonoBehaviour
         transform.eulerAngles = startRotation;
     }
 
-
     void Update()
-    {
+    {        
+        if (isStunned)
+        {
+            if (progressStun < durationStun)
+            {
+                progressStun += Time.deltaTime;                
+
+                transform.Rotate(0, 0, stunCurve.Evaluate(progressStun / durationStun));
+            }
+
+            if (progressStun > durationStun)
+            {
+                isStunned = false;
+                progressStun = 0;
+            }
+        }
         if (directionalInput.y > 0)
         {
             currentSpeed += forwardSpeed * Time.deltaTime;
@@ -59,14 +78,18 @@ public class Player : MonoBehaviour
             }
         }        
 
-        if (currentSpeed > speedLimit)
+        if (currentSpeed > speedLimitMax)
         {
-            currentSpeed = speedLimit;
+            currentSpeed = speedLimitMax;
+        }
+        if (currentSpeed < speedLimitMin)
+        {
+            currentSpeed = speedLimitMin;
         }
 
         transform.position += Time.deltaTime * currentSpeed * transform.up;
 
-        if (currentSpeed > 0 || currentSpeed < 0)
+        if (currentSpeed > 0)
         {
             if (Keyboard.current.leftArrowKey.isPressed)
             {
@@ -75,6 +98,17 @@ public class Player : MonoBehaviour
             if (Keyboard.current.rightArrowKey.isPressed)
             {
                 transform.Rotate(0, 0, -turnSpeed * Time.deltaTime);
+            }
+        }
+        if (currentSpeed < 0)
+        {
+            if (Keyboard.current.leftArrowKey.isPressed)
+            {
+                transform.Rotate(0, 0, -turnSpeed * Time.deltaTime);
+            }
+            if (Keyboard.current.rightArrowKey.isPressed)
+            {
+                transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
             }
         }
 
@@ -100,20 +134,28 @@ public class Player : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
         transform.position = worldPosition;
-
-        GameOver();
     }
+    
 
     public void OnMove(InputAction.CallbackContext context)
     {
         directionalInput = context.ReadValue<Vector2>();
     }
 
-    public void GameOver()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Vector3.Distance(carObstaclesScript.transform.position, transform.position) < crashDistance)
+        if (other.CompareTag("EnemyCar"))
         {
             Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Pylon"))
+        {
+            currentSpeed = 0f;
+
+            Destroy(other.gameObject);
+
+            isStunned = true;
         }
     }
 }

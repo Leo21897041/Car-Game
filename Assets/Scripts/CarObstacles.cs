@@ -1,7 +1,8 @@
+using TMPro;
 using UnityEngine;
 
 public class CarObstacles : MonoBehaviour
-{
+{    
     public float speed;
     public float crashDistance;
     public int xMin;
@@ -15,7 +16,7 @@ public class CarObstacles : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         transform.position += Time.deltaTime * speed * transform.up;
 
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -23,8 +24,14 @@ public class CarObstacles : MonoBehaviour
         if (screenPosition.x < 0 - xMin || screenPosition.x > Screen.width + xMax)
         {
             Destroy(gameObject);
-        }
+        }        
+    }
 
-        playerScript.GameOver();
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }        
     }
 }

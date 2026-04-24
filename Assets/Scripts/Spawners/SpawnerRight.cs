@@ -15,39 +15,49 @@ public class SpawnerRight : MonoBehaviour
     public GameObject carPrefab;
     public Vector3 carSpawnPosition;
 
+    public bool isStartButton;
+    public GameObject startButton;
+
     void Start()
     {
 
+    }
+    public void OnStartButton()
+    {
+        isStartButton = true;
+        startButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (spawningProgress < spawningDuration)
+        if (isStartButton)
         {
-            spawningProgress += Time.deltaTime;
-        }
-
-        if (spawningProgress > spawningDuration)
-        {
-            randomLane = Random.Range(1, 3);
-            spawningProgress = 0f;
-            spawningDuration = Random.Range(minTimer, maxTimer);
-
-            if (randomLane == 1)
+            if (spawningProgress < spawningDuration)
             {
-                carSpawnPosition = laneOne;
-            }
-            if (randomLane == 2)
-            {
-                carSpawnPosition = laneTwo;
+                spawningProgress += Time.deltaTime;
             }
 
-            GameObject spawnedCar = Instantiate(carPrefab, carSpawnPosition, transform.rotation);
+            if (spawningProgress > spawningDuration)
+            {
+                randomLane = Random.Range(1, 3);
+                spawningProgress = 0f;
+                spawningDuration = Random.Range(minTimer, maxTimer);
 
-            Debug.Log(randomLane);
-            Debug.Log(carSpawnPosition);
+                if (randomLane == 1)
+                {
+                    carSpawnPosition = laneOne;
+                }
+                if (randomLane == 2)
+                {
+                    carSpawnPosition = laneTwo;
+                }
+
+                GameObject spawnedCar = Instantiate(carPrefab, carSpawnPosition, transform.rotation);
+
+                Debug.Log(randomLane);
+                Debug.Log(carSpawnPosition);
+            }
         }
     }
 }
