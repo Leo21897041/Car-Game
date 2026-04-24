@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     
     public Vector2 directionalInput;
 
+    private CarObstacles carObstaclesScript;
+    public float crashDistance;
 
     void Start()
     {
@@ -98,10 +100,20 @@ public class Player : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
         transform.position = worldPosition;
+
+        GameOver();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         directionalInput = context.ReadValue<Vector2>();
+    }
+
+    public void GameOver()
+    {
+        if (Vector3.Distance(carObstaclesScript.transform.position, transform.position) < crashDistance)
+        {
+            Destroy(gameObject);
+        }
     }
 }

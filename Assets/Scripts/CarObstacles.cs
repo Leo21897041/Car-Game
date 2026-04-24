@@ -3,11 +3,14 @@ using UnityEngine;
 public class CarObstacles : MonoBehaviour
 {
     public float speed;
+    public float crashDistance;
     public int xMin;
     public int xMax;
+
+    private Player playerScript;
     void Start()
     {
-        
+        playerScript = GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -20,6 +23,8 @@ public class CarObstacles : MonoBehaviour
         if (screenPosition.x < 0 - xMin || screenPosition.x > Screen.width + xMax)
         {
             Destroy(gameObject);
-        }        
+        }
+
+        playerScript.GameOver();
     }
 }

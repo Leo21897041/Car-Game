@@ -148,10 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105be71f279d474ca45544476c8fa92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylons
-  pylonProgress: 0
-  pylonDuration: 1
   pylonSpawnPosition: {x: 10, y: 0}
-  pylonPrefab: {fileID: 7407934385474731730, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
+  newPylonDistance: 5
+  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
 --- !u!4 &43725728
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560007253
 Transform:
   m_ObjectHideFlags: 0
@@ -441,7 +440,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1153787961
+--- !u!1 &1510991622
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,10 +448,82 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1153787964}
-  - component: {fileID: 1153787963}
-  - component: {fileID: 1153787965}
-  - component: {fileID: 1153787966}
+  - component: {fileID: 1510991624}
+  - component: {fileID: 1510991625}
+  m_Layer: 0
+  m_Name: Spawner Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1510991624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510991622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1510991625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510991622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9f390c576c29e44a090eb0afd7fde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerLeft
+  laneOne: {x: -12, y: -1}
+  laneTwo: {x: -12, y: -3}
+  randomLane: 0
+  spawningProgress: 0
+  spawningDuration: 1
+  minTimer: 1
+  maxTimer: 4
+  carPrefab: {fileID: 6800076693817504039, guid: 8cbfbcd355f3d554fb155a29f3a682bd, type: 3}
+  carSpawnPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &3914995921381913819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656989574868483898}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d973aad92bfe6c546b90fb9e247100fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCar
+  speed: 0.1
+  speedLimit: 0.04
+  accelerate: 0
+  turnSpeed: 270
+  startPosition: {x: -6, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: -90}
+--- !u!1 &4656989574868483898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8262451821812439019}
+  - component: {fileID: 6126124296703935483}
+  - component: {fileID: 9184152539970634752}
+  - component: {fileID: 8826238910896752368}
+  - component: {fileID: 3914995921381913819}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -460,14 +531,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1153787963
+--- !u!212 &6126124296703935483
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153787961}
+  m_GameObject: {fileID: 4656989574868483898}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -519,13 +590,13 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!4 &1153787964
+--- !u!4 &8262451821812439019
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153787961}
+  m_GameObject: {fileID: 4656989574868483898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -6, y: 0, z: 0}
@@ -534,29 +605,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &1153787965
+--- !u!114 &8826238910896752368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153787961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d973aad92bfe6c546b90fb9e247100fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCar
-  speed: 15
-  turnSpeed: 270
-  startPosition: {x: -6, y: 0, z: 0}
-  startRotation: {x: 0, y: 0, z: -90}
---- !u!114 &1153787966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153787961}
+  m_GameObject: {fileID: 4656989574868483898}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -577,8 +632,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153787965}
-        m_TargetAssemblyTypeName: PlayerCar, Assembly-CSharp
+      - m_Target: {fileID: 9184152539970634752}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -668,66 +723,34 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!1 &1510991622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1510991624}
-  - component: {fileID: 1510991625}
-  m_Layer: 0
-  m_Name: Spawner Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1510991624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510991622}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &1510991625
+--- !u!114 &9184152539970634752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510991622}
+  m_GameObject: {fileID: 4656989574868483898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f9f390c576c29e44a090eb0afd7fde6, type: 3}
+  m_Script: {fileID: 11500000, guid: 07a8f01153ff5d846af502f8f891240a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerLeft
-  laneOne: {x: -12, y: -1}
-  laneTwo: {x: -12, y: -3}
-  randomLane: 0
-  spawningProgress: 0
-  spawningDuration: 1
-  minTimer: 1
-  maxTimer: 4
-  carPrefab: {fileID: 6800076693817504039, guid: 8cbfbcd355f3d554fb155a29f3a682bd, type: 3}
-  carSpawnPosition: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  forwardSpeed: 10
+  reverseSpeed: 10
+  currentSpeed: 0
+  decelerate: 4
+  speedLimit: 10
+  turnSpeed: 150
+  startPosition: {x: -6, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: -90}
+  directionalInput: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 1153787964}
+  - {fileID: 8262451821812439019}
   - {fileID: 1510991624}
   - {fileID: 560007253}
   - {fileID: 43725728}

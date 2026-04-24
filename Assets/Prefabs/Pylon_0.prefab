@@ -104,4 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb53ca5d5163f84d9e898995129f35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ENVMovement
-  player: {fileID: 2289931878973873126, guid: f06b8bd94977c6043a77d9ce49eb0591, type: 3}
+  currentSpeedENV: 0
+  moveSpeedENV: 10.41
+  playerSpeed: 0.5
+  xMin: 12
+  xMax: 12
