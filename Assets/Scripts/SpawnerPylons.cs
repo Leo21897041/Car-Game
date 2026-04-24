@@ -2,28 +2,25 @@ using UnityEngine;
 
 public class SpawnerPylons : MonoBehaviour
 {
-    public float pylonProgress;
-    public float pylonDuration;
     public Vector2 pylonSpawnPosition;
+
+    public float newPylonDistance;
 
     public GameObject pylonPrefab;
 
     void Start()
     {
-        
+        GameObject spawnedPylon = Instantiate(pylonPrefab, pylonSpawnPosition, Quaternion.identity);        
     }
     
     void Update()
     {
-        if (pylonProgress < pylonDuration)
-        {
-            pylonProgress += Time.deltaTime;
-        }
+        Vector2 screenPositionPylon = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (pylonProgress > pylonDuration)
-        {
-            pylonProgress = 0;
+        float distanceToNextPylon = Vector2.Distance(transform.position, pylonPrefab.transform.position);
 
+        if (distanceToNextPylon > newPylonDistance)
+        {
             GameObject spawnedPylon = Instantiate(pylonPrefab, pylonSpawnPosition, Quaternion.identity);
         }
     }

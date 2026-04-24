@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerCar : MonoBehaviour
 {
     public float speed;
+    public float speedLimit;
+    public float accelerate;
     public float turnSpeed;
 
     Vector3 currentPosition;
@@ -24,9 +26,27 @@ public class PlayerCar : MonoBehaviour
     {
         if (Keyboard.current.upArrowKey.isPressed)
         {
+            accelerate += Time.deltaTime * speed;
             currentPosition = transform.position;
-            currentPosition += speed * Time.deltaTime * transform.up;
+            currentPosition += accelerate * transform.up;
             transform.position = currentPosition;
+
+            if (accelerate > speedLimit)
+            {
+                accelerate = speedLimit;
+            }
+        }
+        else 
+        {
+            accelerate -= Time.deltaTime * speed;
+            currentPosition = transform.position;
+            currentPosition += accelerate * transform.up;
+            transform.position = currentPosition;
+
+            if (accelerate <= 0)
+            {
+                accelerate = 0f;
+            }
         }
 
         if (Keyboard.current.leftArrowKey.isPressed)
@@ -34,13 +54,15 @@ public class PlayerCar : MonoBehaviour
             currentRotation = transform.eulerAngles;
 
             currentRotation.z += Time.deltaTime * turnSpeed;
+
             transform.eulerAngles = currentRotation;
         }
         if (Keyboard.current.rightArrowKey.isPressed)
         {
             currentRotation = transform.eulerAngles;
 
-            currentRotation .z -= Time.deltaTime * turnSpeed;
+            currentRotation .z -= Time.deltaTime * turnSpeed;           
+
             transform.eulerAngles = currentRotation;
         }
 
