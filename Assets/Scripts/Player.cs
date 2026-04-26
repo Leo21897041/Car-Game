@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float speedLimitMin;
     public float turnSpeed;
 
-    Vector3 currentPosition;
+    public Vector3 currentPosition;
     public Vector3 startPosition;
     Vector3 currentRotation;
     public Vector3 startRotation;
@@ -32,7 +32,9 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
+        currentPosition = transform.position;
+
         if (isStunned)
         {
             if (progressStun < durationStun)
@@ -87,7 +89,9 @@ public class Player : MonoBehaviour
             currentSpeed = speedLimitMin;
         }
 
-        transform.position += Time.deltaTime * currentSpeed * transform.up;
+        currentPosition += Time.deltaTime * currentSpeed * transform.up;
+
+        transform.position = currentPosition;
 
         if (currentSpeed > 0)
         {
@@ -117,18 +121,23 @@ public class Player : MonoBehaviour
         if (screenPosition.x < 0)
         {
             screenPosition.x = 0;
+
+            currentSpeed = 0;
         }
         if (screenPosition.x > Screen.width)
         {
             screenPosition.x = Screen.width;
+            currentSpeed = 0;
         }
         if (screenPosition.y < 0)
         {
             screenPosition.y = 0;
+            currentSpeed = 0;
         }
         if (screenPosition.y > Screen.height)
         {
             screenPosition.y = Screen.height;
+            currentSpeed = 0;
         }
 
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);

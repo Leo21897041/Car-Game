@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8780071228093550367}
   - component: {fileID: 77799612438508861}
-  - component: {fileID: 1924620898711892243}
   m_Layer: 0
   m_Name: F1 Track_0
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -7.92, y: 3.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 7.6775, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7380323846406236446, guid: 3ec168e344ed8054b8281469596f45c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -92,20 +91,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1924620898711892243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628419192547798532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb53ca5d5163f84d9e898995129f35d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ENVMovement
-  currentSpeedENV: 0
-  moveSpeedENV: 10
-  playerSpeed: 0.5
-  xMin: 12
-  xMax: 12

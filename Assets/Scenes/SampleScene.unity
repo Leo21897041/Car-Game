@@ -119,56 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &43725726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 43725728}
-  - component: {fileID: 43725729}
-  m_Layer: 0
-  m_Name: Spawner Pylon Middle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &43725728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43725726}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 30, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &43725729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43725726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6afe221ecc5d46aa2dbc2de06164c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylonsMiddle
-  newPylonDistance: 25
-  offset: 0
-  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
-  spawnedPylon: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
-  isStartButton: 0
-  startButton: {fileID: 1830775389}
 --- !u!1 &167896764
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.080002, y: -44.1}
+  m_AnchoredPosition: {x: 18.079956, y: -44.099976}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &535304685
@@ -626,61 +576,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &560007251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 560007253}
-  - component: {fileID: 560007254}
-  m_Layer: 0
-  m_Name: Spawner Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &560007253
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560007251}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &560007254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560007251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6cad6dab8894ab458458c4a32e222eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerRight
-  laneOne: {x: 10, y: 3}
-  laneTwo: {x: 10, y: 1}
-  randomLane: 0
-  spawningProgress: 0
-  spawningDuration: 1
-  minTimer: 1
-  maxTimer: 4
-  carPrefab: {fileID: 6800076693817504039, guid: 8cbfbcd355f3d554fb155a29f3a682bd, type: 3}
-  carSpawnPosition: {x: 0, y: 0, z: 0}
-  isStartButton: 0
-  startButton: {fileID: 1830775389}
 --- !u!1 &596465709
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,30 +585,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 596465711}
-  - component: {fileID: 596465710}
+  - component: {fileID: 596465712}
   m_Layer: 0
-  m_Name: Spawner F1 Track 1
+  m_Name: Spawner F1 Tracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &596465710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596465709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d12edb2196e429aacf41a2b11b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Top
-  newPylonDistance: 2
-  offset: 0
-  f1SidePrefab: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
-  spawnedF1Side: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
 --- !u!4 &596465711
 Transform:
   m_ObjectHideFlags: 0
@@ -723,12 +602,28 @@ Transform:
   m_GameObject: {fileID: 596465709}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 851971025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &596465712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596465709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3956d07d06eb3f4fb86cf924142c6da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Tracks
+  f1TrackPrefab: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
+  spawnStartingPosition: {x: 0, y: 0, z: 0}
+  spawnAmountLanes: 4
+  spawnOffsetLanes: -2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,30 +717,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701262171}
-  - component: {fileID: 701262170}
+  - component: {fileID: 701262172}
   m_Layer: 0
-  m_Name: Spawner F1 Track Sides Top
+  m_Name: Spawner F1 Sides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &701262170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701262169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d12edb2196e429aacf41a2b11b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Top
-  newPylonDistance: 4.8
-  offset: 0
-  f1SidePrefab: {fileID: 5411529797129245520, guid: 68242c2aa27bbc747addb2b7a37343ca, type: 3}
-  spawnedF1Side: {fileID: 5411529797129245520, guid: 68242c2aa27bbc747addb2b7a37343ca, type: 3}
 --- !u!4 &701262171
 Transform:
   m_ObjectHideFlags: 0
@@ -855,108 +734,30 @@ Transform:
   m_GameObject: {fileID: 701262169}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 4.6, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 851971025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &780473434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 780473436}
-  - component: {fileID: 780473435}
-  m_Layer: 0
-  m_Name: Spawner F1 Track 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &780473435
+--- !u!114 &701262172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780473434}
+  m_GameObject: {fileID: 701262169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d12edb2196e429aacf41a2b11b0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 45dcfe61ae9c6604090dc32bcfb09c75, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Top
-  newPylonDistance: 2
-  offset: 0
-  f1SidePrefab: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
-  spawnedF1Side: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
---- !u!4 &780473436
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780473434}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &811660167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 811660169}
-  - component: {fileID: 811660168}
-  m_Layer: 0
-  m_Name: Spawner F1 Track 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &811660168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811660167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d12edb2196e429aacf41a2b11b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Top
-  newPylonDistance: 2
-  offset: 0
-  f1SidePrefab: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
-  spawnedF1Side: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
---- !u!4 &811660169
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811660167}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Sides
+  trackSidePrefab: {fileID: 5411529797129245520, guid: 68242c2aa27bbc747addb2b7a37343ca, type: 3}
+  trackSideAmount: 9
+  trackSideSpawnOffset: 4.8
+  spawnStartPosition: {x: -10, y: 0, z: 0}
+  ySpawnTop: 4.6
+  ySpawnBottom: -4.6
 --- !u!1 &849925227
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +769,7 @@ GameObject:
   - component: {fileID: 849925229}
   - component: {fileID: 849925230}
   m_Layer: 0
-  m_Name: Spawner Pylon Top
+  m_Name: Spawner Pylon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -982,13 +783,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849925227}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 30, y: 4.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &849925230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,15 +799,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 849925227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2778125e999e1a84db5482be42a0d823, type: 3}
+  m_Script: {fileID: 11500000, guid: 8105be71f279d474ca45544476c8fa92, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylonsTop
-  newPylonDistance: 25
-  offset: 0
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylons
   pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
-  spawnedPylon: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
-  isStartButton: 0
-  startButton: {fileID: 1830775389}
+  pylonAmountX: 4
+  pylonAmountY: 3
+  startingSpawnPosition: {x: -11.25, y: 4.6, z: 0}
+  offsetPylonX: 11.25
+  offsetPylonY: 4.6
 --- !u!1 &851971024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,117 +837,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1510991624}
-  - {fileID: 560007253}
   - {fileID: 849925229}
-  - {fileID: 43725728}
-  - {fileID: 898203961}
   - {fileID: 701262171}
-  - {fileID: 1741581505}
   - {fileID: 596465711}
-  - {fileID: 811660169}
-  - {fileID: 780473436}
-  - {fileID: 972771659}
+  - {fileID: 1152711478}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &898203959
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 898203961}
-  - component: {fileID: 898203962}
-  m_Layer: 0
-  m_Name: Spawner Pylon Bottom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &898203961
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898203959}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 30, y: -4.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &898203962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898203959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0badea34a2031964f8af8c93fa9e17c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPylonsBottom
-  newPylonDistance: 25
-  offset: 0
-  pylonPrefab: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
-  spawnedPylon: {fileID: 8942101255749299379, guid: 2eeba69e2a9a1544389e8849aeaf5624, type: 3}
-  isStartButton: 0
-  startButton: {fileID: 1830775389}
---- !u!1 &972771657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 972771659}
-  - component: {fileID: 972771658}
-  m_Layer: 0
-  m_Name: Spawner F1 Track 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &972771658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972771657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d12edb2196e429aacf41a2b11b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Top
-  newPylonDistance: 2
-  offset: 0
-  f1SidePrefab: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
-  spawnedF1Side: {fileID: 1628419192547798532, guid: 1677ee458834a58458482b7bf17a3e0d, type: 3}
---- !u!4 &972771659
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972771657}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1022658302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +922,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1152711477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152711478}
+  - component: {fileID: 1152711479}
+  m_Layer: 0
+  m_Name: Spawner Cars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152711478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152711477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 851971025}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1152711479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152711477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85cbe3599093ef4892f14a82b16beb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerCars
+  carPrefabTop: {fileID: 2921723530308945787, guid: 4717c40ab1b8e31488e940246d42f907, type: 3}
+  carPrefabBottom: {fileID: 760711084725941519, guid: c942d7b6450b4894bb20b25629beb35d, type: 3}
+  startButton: {fileID: 1830775389}
+  isStarted: 0
+  startSpawnPositionTop: {x: 10, y: 0, z: 0}
+  spawnProgressTop: 0
+  spawnDurationTop: 3
+  randomDurationMinTop: 1
+  randomDurationMaxTop: 3
+  spawnAmountCarsTop: 1
+  spawnOffsetYTop: 0
+  randomLaneTop: 0
+  randomLaneTopMin: 1
+  randomLaneTopMax: 3
+  laneOne: -3
+  laneTwo: -1
+  startSpawnPositionBottom: {x: -10, y: 0, z: 0}
+  spawnProgressBottom: 0
+  spawnDurationBottom: 3
+  randomDurationMinBottom: 1
+  randomDurationMaxBottom: 3
+  spawnAmountCarsBottom: 1
+  spawnOffsetYBottom: 0
+  randomLaneBottom: 0
+  randomLaneBottomMin: 1
+  randomLaneBottomMax: 3
+  laneThree: 1
+  laneFour: 3
 --- !u!1 &1276593448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,109 +1097,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1510991622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1510991624}
-  - component: {fileID: 1510991625}
-  m_Layer: 0
-  m_Name: Spawner Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1510991624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510991622}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &1510991625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510991622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f9f390c576c29e44a090eb0afd7fde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerLeft
-  laneOne: {x: -10, y: -1}
-  laneTwo: {x: -10, y: -3}
-  randomLane: 0
-  spawningProgress: 0
-  spawningDuration: 1
-  minTimer: 1
-  maxTimer: 4
-  carPrefab: {fileID: 6800076693817504039, guid: 8cbfbcd355f3d554fb155a29f3a682bd, type: 3}
-  carSpawnPosition: {x: 0, y: 0, z: 0}
-  isStartButton: 0
-  startButton: {fileID: 1830775389}
---- !u!1 &1741581503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1741581505}
-  - component: {fileID: 1741581504}
-  m_Layer: 0
-  m_Name: Spawner F1 Track Sides Bottom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1741581504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741581503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d12edb2196e429aacf41a2b11b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerF1Top
-  newPylonDistance: 4.8
-  offset: 0
-  f1SidePrefab: {fileID: 5411529797129245520, guid: 68242c2aa27bbc747addb2b7a37343ca, type: 3}
-  spawnedF1Side: {fileID: 5411529797129245520, guid: 68242c2aa27bbc747addb2b7a37343ca, type: 3}
---- !u!4 &1741581505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741581503}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: -4.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 851971025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1819305282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,56 +1320,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510991625}
-        m_TargetAssemblyTypeName: SpawnerLeft, Assembly-CSharp
-        m_MethodName: OnStartButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 560007254}
-        m_TargetAssemblyTypeName: SpawnerRight, Assembly-CSharp
-        m_MethodName: OnStartButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 849925230}
-        m_TargetAssemblyTypeName: SpawnerPylonsTop, Assembly-CSharp
-        m_MethodName: OnStartButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 43725729}
-        m_TargetAssemblyTypeName: SpawnerPylonsMiddle, Assembly-CSharp
-        m_MethodName: OnStartButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 898203962}
-        m_TargetAssemblyTypeName: SpawnerPylonsBottom, Assembly-CSharp
+      - m_Target: {fileID: 1152711479}
+        m_TargetAssemblyTypeName: SpawnerCars, Assembly-CSharp
         m_MethodName: OnStartButton
         m_Mode: 1
         m_Arguments:
@@ -1939,7 +1556,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4939573801270549380, guid: 45b67ff6fbbcc554088e3dfddf40e801, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2103,6 +1720,7 @@ MonoBehaviour:
   speedLimitMax: 10
   speedLimitMin: -10
   turnSpeed: 270
+  currentPosition: {x: 0, y: 0, z: 0}
   startPosition: {x: -6, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: -90}
   directionalInput: {x: 0, y: 0}

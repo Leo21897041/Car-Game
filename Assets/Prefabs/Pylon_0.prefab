@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 493359589016025864, guid: a9f4aba236d22054290cf1f90cc5edb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,11 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb53ca5d5163f84d9e898995129f35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ENVMovement
-  currentSpeedENV: 0
-  moveSpeedENV: 10
-  playerSpeed: 0.5
-  xMin: 12
-  xMax: 12
+  startPositionENV: {x: 0, y: 0, z: 0}
+  currentPositionENV: {x: 0, y: 0, z: 0}
+  startPositionPlayer: {x: 0, y: 0, z: 0}
 --- !u!61 &-28287358249641628
 BoxCollider2D:
   m_ObjectHideFlags: 0

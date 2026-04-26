@@ -1,29 +1,30 @@
-using TMPro;
 using UnityEngine;
 
-public class CarObstacles : MonoBehaviour
-{    
+public class CarLeft : MonoBehaviour
+{
+    private Player playerScript;
+
     public float speed;
     public int xMin;
     public int xMax;
 
-    private Player playerScript;
     void Start()
     {
-        playerScript = GetComponent<Player>();
+        playerScript = FindFirstObjectByType<Player>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position += Time.deltaTime * speed * transform.right;
+        float totalSpeed = speed + playerScript.currentSpeed;
+
+        transform.position -= Time.deltaTime * totalSpeed * transform.right;
 
         Vector3 screenPosition = transform.position;
 
-        if (screenPosition.x < 0 - xMin || screenPosition.x > Screen.width + xMax)
+        if (screenPosition.x < 0 - xMin)
         {
             Destroy(gameObject);
-        }        
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +32,6 @@ public class CarObstacles : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-        }        
+        }
     }
 }

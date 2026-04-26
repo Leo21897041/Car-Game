@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ENVMovement : MonoBehaviour
+public class CarENVMovement : MonoBehaviour
 {
     private Player playerScript;
 
@@ -23,11 +23,11 @@ public class ENVMovement : MonoBehaviour
         currentPositionENV = transform.position;
 
         amountMoved = startPositionPlayer.x - playerScript.currentPosition.x;
-        
+
         if (playerScript.currentSpeed != 0)
         {
-            currentPositionENV.x = startPositionENV.x + amountMoved;
-        }        
+            currentPositionENV.x += amountMoved;
+        }
 
         transform.position = currentPositionENV;
     }
