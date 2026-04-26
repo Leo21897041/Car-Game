@@ -1,9 +1,10 @@
+## Overview
 A top-down driving game built in Unity (C#) where the player must avoid obstacles and survive as long as possible.
 
 ## Obstacles:
  ```
-Pylons - Stun players for 1 second
-Cars - Destroy the players car
+**Pylons** - Stun players for 1 second
+**Cars** - Destroy the players car
  ```
 ## Game Layout:
 ```
