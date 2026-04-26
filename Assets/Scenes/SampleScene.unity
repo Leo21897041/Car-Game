@@ -1122,8 +1122,8 @@ MonoBehaviour:
   startSpawnPositionTop: {x: 10, y: 0, z: 0}
   spawnProgressTop: 0
   spawnDurationTop: 3
-  randomDurationMinTop: 1
-  randomDurationMaxTop: 3
+  randomDurationMinTop: 0.5
+  randomDurationMaxTop: 1.5
   spawnAmountCarsTop: 1
   spawnOffsetYTop: 0
   randomLaneTop: 0
@@ -1134,8 +1134,8 @@ MonoBehaviour:
   startSpawnPositionBottom: {x: -10, y: 0, z: 0}
   spawnProgressBottom: 0
   spawnDurationBottom: 3
-  randomDurationMinBottom: 1
-  randomDurationMaxBottom: 3
+  randomDurationMinBottom: 0.5
+  randomDurationMaxBottom: 1.5
   spawnAmountCarsBottom: 1
   spawnOffsetYBottom: 0
   randomLaneBottom: 0

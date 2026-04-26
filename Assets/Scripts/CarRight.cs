@@ -8,6 +8,10 @@ public class CarRight : MonoBehaviour
     public int xMin;
     public int xMax;
 
+    public bool sameDirectionAsPlayer;
+
+    private float totalSpeed;
+
     void Start()
     {
         playerScript = FindFirstObjectByType<Player>();
@@ -15,7 +19,18 @@ public class CarRight : MonoBehaviour
 
     void Update()
     {
-        float totalSpeed = speed + playerScript.currentSpeed;
+        float directionalCheck = Vector3.Dot(transform.right, playerScript.transform.up);
+
+        if (directionalCheck > 0)
+        {
+            totalSpeed = speed - playerScript.currentSpeed;            
+        }
+        else
+        {
+            totalSpeed = speed + playerScript.currentSpeed;            
+        }
+
+        totalSpeed = Mathf.Max(0f, totalSpeed);
 
         transform.position += Time.deltaTime * totalSpeed * transform.right;
 
@@ -29,11 +44,6 @@ public class CarRight : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-
         if (other.CompareTag("EnemyCar"))
         { 
             Destroy(gameObject);        

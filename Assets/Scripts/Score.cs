@@ -12,10 +12,6 @@ public class Score : MonoBehaviour
     public bool isStartButton;
     public GameObject startButton;
 
-    void Start()
-    {
-
-    }
     public void OnStartButton()
     {
         isStartButton = true;
@@ -26,7 +22,7 @@ public class Score : MonoBehaviour
     {
         if (isStartButton)
         {
-            if (playerScript == null)
+            if (playerScript.isGameOver == true)
             {
                 return;
             }

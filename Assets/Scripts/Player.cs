@@ -112,30 +112,16 @@ public class Player : MonoBehaviour
 
         currentPosition += Time.deltaTime * currentSpeed * transform.up;
 
-        transform.position = currentPosition;
-
-        if (currentSpeed > 0)
+        transform.position = currentPosition + Time.deltaTime * transform.up;
+        
+        if (Keyboard.current.leftArrowKey.isPressed)
         {
-            if (Keyboard.current.leftArrowKey.isPressed)
-            {
-                transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
-            }
-            if (Keyboard.current.rightArrowKey.isPressed)
-            {
-                transform.Rotate(0, 0, -turnSpeed * Time.deltaTime);
-            }
+            transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
         }
-        if (currentSpeed < 0)
+        if (Keyboard.current.rightArrowKey.isPressed)
         {
-            if (Keyboard.current.leftArrowKey.isPressed)
-            {
-                transform.Rotate(0, 0, -turnSpeed * Time.deltaTime);
-            }
-            if (Keyboard.current.rightArrowKey.isPressed)
-            {
-                transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
-            }
-        }
+            transform.Rotate(0, 0, -turnSpeed * Time.deltaTime);
+        }     
 
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 
@@ -150,14 +136,14 @@ public class Player : MonoBehaviour
             screenPosition.x = Screen.width;
             currentSpeed = 0;
         }
-        if (screenPosition.y < 0)
+        if (screenPosition.y < 50)
         {
-            screenPosition.y = 0;
+            screenPosition.y = 50;
             currentSpeed = 0;
         }
-        if (screenPosition.y > Screen.height)
+        if (screenPosition.y > Screen.height - 50)
         {
-            screenPosition.y = Screen.height;
+            screenPosition.y = Screen.height - 50;
             currentSpeed = 0;
         }
 
