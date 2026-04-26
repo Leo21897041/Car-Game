@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -25,14 +26,34 @@ public class Player : MonoBehaviour
     public float durationStun;
     public bool isStunned;
 
+    public bool isGameOver;
+    public float gameOverProgress;
+    public float gameOverDuration;
+    public GameObject restartButton;
+
     void Start()
     {
         transform.position = startPosition;
         transform.eulerAngles = startRotation;
+
+        restartButton.SetActive(false);
     }
 
     void Update()
     {
+        if (isGameOver)
+        {
+            gameOverProgress += Time.deltaTime;
+
+            if (gameOverProgress > gameOverDuration)
+            {
+                gameOverProgress = gameOverDuration;
+                restartButton.SetActive(true);
+            }
+
+            return;
+        }
+
         currentPosition = transform.position;
 
         if (isStunned)
@@ -145,7 +166,6 @@ public class Player : MonoBehaviour
         transform.position = worldPosition;
     }
     
-
     public void OnMove(InputAction.CallbackContext context)
     {
         directionalInput = context.ReadValue<Vector2>();
@@ -155,7 +175,10 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("EnemyCar"))
         {
-            Destroy(gameObject);
+            isGameOver = true;
+
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
         }
 
         if (other.CompareTag("Pylon"))
