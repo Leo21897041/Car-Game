@@ -8,7 +8,7 @@ public class CarLeft : MonoBehaviour
     public int xMin;
     public int xMax;
 
-    private float totalSpeed;
+    public float totalSpeed;
 
     public ParticleSystem crashParticles;
 
@@ -19,32 +19,39 @@ public class CarLeft : MonoBehaviour
 
     void Update()
     {
-        float directionalCheck = Vector3.Dot(-transform.right, playerScript.transform.up);
-
-        if (directionalCheck > 0)
+        if (playerScript.isGameOver)
         {
-            totalSpeed = speed - playerScript.currentSpeed;
+            totalSpeed = playerScript.finalSpeedLeft;
         }
-        else
-        {
-            totalSpeed = speed + playerScript.currentSpeed;
-        }
+        else 
+        { 
+            float directionalCheck = Vector3.Dot(-transform.right, playerScript.transform.up);
 
-        totalSpeed = Mathf.Max(0f, totalSpeed);
+            if (directionalCheck > 0)
+            {
+                totalSpeed = speed - playerScript.currentSpeed;
+            }
+            else
+            {
+                totalSpeed = speed + playerScript.currentSpeed;
+            }
+
+            totalSpeed = Mathf.Max(0f, totalSpeed);
+
+            Vector3 screenPosition = transform.position;
+
+            if (screenPosition.x < 0 - xMin)
+            {
+                Destroy(gameObject);
+            }        
+        }
 
         transform.position -= Time.deltaTime * totalSpeed * transform.right;
-
-        Vector3 screenPosition = transform.position;
-
-        if (screenPosition.x < 0 - xMin)
-        {
-            Destroy(gameObject);
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("EnemyCar"))
+        if (other.CompareTag("Player"))
         {
             crashParticles.Play();
 

@@ -2223,7 +2223,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -2264,8 +2264,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4656989574868483898}
   serializedVersion: 8
-  lengthInSec: 0.34
-  simulationSpeed: 0.7
+  lengthInSec: 0.28
+  simulationSpeed: 0.9
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -2339,7 +2339,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1.06
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2974,7 +2974,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.33
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -3203,7 +3203,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 20
+        scalar: 40
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -4966,11 +4966,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5.76
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5127,7 +5127,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 4.2
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
