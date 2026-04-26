@@ -8,6 +8,9 @@ public class SpawnerPylons : MonoBehaviour
     public Vector3 startingSpawnPosition;
     public float offsetPylonX;
     public float offsetPylonY;
+
+    public float respawnProgress;
+    public float respawnDuration;
     void Start()
     {
         for (int i = 0; i < pylonAmountX; i++)
@@ -15,7 +18,7 @@ public class SpawnerPylons : MonoBehaviour
             for (int j = 0; j < pylonAmountY; j++)
             { 
                 Vector3 spawnPosition = startingSpawnPosition + new Vector3(offsetPylonX * i, -offsetPylonY * j, 0);
-                Instantiate(pylonPrefab, spawnPosition, Quaternion.identity);         
+                GameObject spawnedPylon = Instantiate(pylonPrefab, spawnPosition, Quaternion.identity);
             }
         }
     }

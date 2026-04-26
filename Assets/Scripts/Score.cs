@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class Score : MonoBehaviour
@@ -11,6 +12,8 @@ public class Score : MonoBehaviour
 
     public bool isStartButton;
     public GameObject startButton;
+
+    public float scoreSpeed;
 
     public void OnStartButton()
     {
@@ -27,7 +30,7 @@ public class Score : MonoBehaviour
                 return;
             }
 
-            score += Time.deltaTime;
+            score += playerScript.currentSpeed / scoreSpeed;
 
             scoreText.text = "Score: " + Mathf.FloorToInt(score);
         }

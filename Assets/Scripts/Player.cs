@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float speedLimitMax;
     public float speedLimitMin;
     public float turnSpeed;
+    public float edgeLimit;
 
     public Vector3 currentPosition;
     public Vector3 startPosition;
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
     public float gameOverProgress;
     public float gameOverDuration;
     public GameObject restartButton;
+
+    public ParticleSystem crashParticles;
 
     void Start()
     {
@@ -81,22 +84,22 @@ public class Player : MonoBehaviour
         }
         else if (directionalInput.y == 0)
         {
-            if (currentSpeed < 0)
+            if (currentSpeed < 1)
             {
                 currentSpeed += decelerate * Time.deltaTime;
                 
-                if (currentSpeed > 0)
+                if (currentSpeed > 1)
                 {
-                    currentSpeed = 0f;
+                    currentSpeed = 1f;
                 }
             }
-            if (currentSpeed > 0)
+            if (currentSpeed > 1)
             { 
                 currentSpeed -= decelerate * Time.deltaTime;
 
-                if (currentSpeed < 0)
+                if (currentSpeed < 1)
                 {
-                    currentSpeed = 0f;
+                    currentSpeed = 1f;
                 }
             }
         }        
@@ -112,7 +115,7 @@ public class Player : MonoBehaviour
 
         currentPosition += Time.deltaTime * currentSpeed * transform.up;
 
-        transform.position = currentPosition + Time.deltaTime * transform.up;
+        transform.position = currentPosition;
         
         if (Keyboard.current.leftArrowKey.isPressed)
         {
@@ -128,23 +131,30 @@ public class Player : MonoBehaviour
         if (screenPosition.x < 0)
         {
             screenPosition.x = 0;
-
             currentSpeed = 0;
+
+            isStunned = true;
         }
         if (screenPosition.x > Screen.width)
         {
             screenPosition.x = Screen.width;
             currentSpeed = 0;
+
+            isStunned = true;
         }
-        if (screenPosition.y < 50)
+        if (screenPosition.y < edgeLimit)
         {
-            screenPosition.y = 50;
+            screenPosition.y = edgeLimit;
             currentSpeed = 0;
+
+            isStunned = true;
         }
-        if (screenPosition.y > Screen.height - 50)
+        if (screenPosition.y > Screen.height - edgeLimit)
         {
-            screenPosition.y = Screen.height - 50;
+            screenPosition.y = Screen.height - edgeLimit;
             currentSpeed = 0;
+
+            isStunned = true;
         }
 
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
@@ -161,6 +171,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("EnemyCar"))
         {
+            crashParticles.Play();
             isGameOver = true;
 
             GetComponent<SpriteRenderer>().enabled = false;

@@ -12,6 +12,8 @@ public class CarRight : MonoBehaviour
 
     private float totalSpeed;
 
+    public ParticleSystem crashParticles;
+
     void Start()
     {
         playerScript = FindFirstObjectByType<Player>();

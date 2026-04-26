@@ -10,6 +10,8 @@ public class CarLeft : MonoBehaviour
 
     private float totalSpeed;
 
+    public ParticleSystem crashParticles;
+
     void Start()
     {
         playerScript = FindFirstObjectByType<Player>();
@@ -44,7 +46,10 @@ public class CarLeft : MonoBehaviour
     {
         if (other.CompareTag("EnemyCar"))
         {
-            Destroy(gameObject);
+            crashParticles.Play();
+
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
         }
     }
 }
