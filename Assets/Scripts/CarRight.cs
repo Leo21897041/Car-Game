@@ -33,5 +33,10 @@ public class CarRight : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("EnemyCar"))
+        { 
+            Destroy(gameObject);        
+        }
     }
 }
