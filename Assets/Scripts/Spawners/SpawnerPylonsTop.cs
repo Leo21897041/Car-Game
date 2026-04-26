@@ -33,7 +33,7 @@ public class SpawnerPylonsTop : MonoBehaviour
 
             if (distanceToNextPylon > newPylonDistance)
             {
-                spawnedPylon = Instantiate(pylonPrefab, transform.position, Quaternion.identity);
+                spawnedPylon = Instantiate(pylonPrefab, transform.position, transform.rotation);
             }
         }
     }

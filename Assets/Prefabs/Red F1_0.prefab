@@ -107,8 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarObstacles
   speed: 5
   crashDistance: 0
-  xMin: 250
-  xMax: 250
+  xMin: 10
+  xMax: 10
 --- !u!61 &-2810342636959402939
 BoxCollider2D:
   m_ObjectHideFlags: 0

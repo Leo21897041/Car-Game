@@ -24,7 +24,7 @@ public class ENVMovement : MonoBehaviour
             playerSpeed = 0;
         }
 
-        transform.position -= (Time.deltaTime * playerScript.currentSpeed * transform.right) * playerSpeed + currentSpeedENV * transform.right;
+        transform.position += (Time.deltaTime * playerScript.currentSpeed * transform.up) * playerSpeed + currentSpeedENV * transform.up;
 
         if (transform.position.x < 0 - xMin || transform.position.x > Screen.width + xMax)
         {

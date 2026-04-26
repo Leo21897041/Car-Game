@@ -19,7 +19,7 @@ public class CarObstacles : MonoBehaviour
     {
         transform.position += Time.deltaTime * speed * transform.up;
 
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 screenPosition = transform.position;
 
         if (screenPosition.x < 0 - xMin || screenPosition.x > Screen.width + xMax)
         {
