@@ -109,7 +109,7 @@ public class SpawnerCars : MonoBehaviour
                 Instantiate(carPrefabBottom, spawnPositionBottom, transform.rotation);
 
                 spawnProgressBottom = 0;
-                spawnDurationBottom = Random.Range(randomDurationMinTop, randomDurationMaxTop);
+                spawnDurationBottom = Random.Range(randomDurationMinBottom, randomDurationMaxBottom);
 
                 randomLaneBottom = Random.Range(randomLaneBottomMin, randomLaneBottomMax);
 
@@ -119,7 +119,7 @@ public class SpawnerCars : MonoBehaviour
                 }
                 if (randomLaneBottom == 2)
                 {
-                    spawnOffsetYTop = laneFour;
+                    spawnOffsetYBottom = laneFour;
                 }
             }
         }

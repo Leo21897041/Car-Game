@@ -15,7 +15,7 @@ public class CarRight : MonoBehaviour
 
     void Update()
     {
-        float totalSpeed = speed + playerScript.currentSpeed / 2;
+        float totalSpeed = speed + playerScript.currentSpeed;
 
         transform.position += Time.deltaTime * totalSpeed * transform.right;
 
