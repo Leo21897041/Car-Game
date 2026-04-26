@@ -15,38 +15,33 @@ public class CarLeft : MonoBehaviour
     void Start()
     {
         playerScript = FindFirstObjectByType<Player>();
+        totalSpeed = speed;
     }
 
     void Update()
-    {
-        if (playerScript.isGameOver)
+    {        
+        float directionalCheck = Vector3.Dot(-transform.right, playerScript.transform.up);
+
+        if (directionalCheck > 0)
         {
-            totalSpeed = playerScript.finalSpeedLeft;
+            totalSpeed = speed - playerScript.currentSpeed;
         }
-        else 
-        { 
-            float directionalCheck = Vector3.Dot(-transform.right, playerScript.transform.up);
-
-            if (directionalCheck > 0)
-            {
-                totalSpeed = speed - playerScript.currentSpeed;
-            }
-            else
-            {
-                totalSpeed = speed + playerScript.currentSpeed;
-            }
-
-            totalSpeed = Mathf.Max(0f, totalSpeed);
-
-            Vector3 screenPosition = transform.position;
-
-            if (screenPosition.x < 0 - xMin)
-            {
-                Destroy(gameObject);
-            }        
+        else
+        {
+            totalSpeed = speed + playerScript.currentSpeed;
         }
 
+        totalSpeed = Mathf.Max(0f, totalSpeed);
+        
+        
         transform.position -= Time.deltaTime * totalSpeed * transform.right;
+
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+
+        if (screenPosition.x < 0 - xMin)
+        {
+            Destroy(gameObject);                   
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -54,7 +49,6 @@ public class CarLeft : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             crashParticles.Play();
-
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
         }

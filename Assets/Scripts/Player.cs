@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private CarLeft carLeftScript;
-    private CarRight carRightScript;
-
     public float forwardSpeed;
     public float reverseSpeed;
     public float currentSpeed;
@@ -33,8 +30,6 @@ public class Player : MonoBehaviour
     public bool isGameOver;
     public float gameOverProgress;
     public float gameOverDuration;
-    public float finalSpeedLeft;
-    public float finalSpeedRight;
     public GameObject restartButton;
 
     public ParticleSystem crashParticles;
@@ -45,9 +40,6 @@ public class Player : MonoBehaviour
         transform.eulerAngles = startRotation;
 
         restartButton.SetActive(false);
-
-        carLeftScript = FindFirstObjectByType<CarLeft>();
-        carRightScript = FindFirstObjectByType<CarRight>();
     }
 
     void Update()
@@ -184,9 +176,6 @@ public class Player : MonoBehaviour
 
             crashParticles.Play();
             isGameOver = true;
-
-            finalSpeedLeft = carLeftScript.totalSpeed;
-            finalSpeedRight = carRightScript.totalSpeed;
         }
 
         if (other.CompareTag("Pylon"))
