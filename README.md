@@ -6,7 +6,8 @@ Obstacles Include:
 >> Cars - Destroy the players car
 
 Game Layout:
->> 4-lane street going 2 ways with pylons covering in the middle, top, and bottom of the road
+>> 4-lane street going 2 ways with pylons and cars spawning across multiple lanes.
+>> ```
 >> --------------------------------------------------------------------------------------------------------------------
 >>  <-- Pylon <--                                                                                          <-- Pylon <--
 >>          <-- Car <--                                                                     <-- Car <--                                                                                    
@@ -16,3 +17,4 @@ Game Layout:
 >>                                                                                   --> Car -->
 >> <-- Pylon <--                                                                                          <-- Pylon <--
 >> --------------------------------------------------------------------------------------------------------------------
+```
