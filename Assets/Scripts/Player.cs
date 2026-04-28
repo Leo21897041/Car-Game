@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
 
     public Vector3 currentPosition;
     public Vector3 startPosition;
-    Vector3 currentRotation;
     public Vector3 startRotation;
     
     public Vector2 directionalInput;
@@ -33,6 +32,9 @@ public class Player : MonoBehaviour
     public GameObject restartButton;
 
     public ParticleSystem crashParticles;
+
+    public AudioSource engineAudioAccelerate;
+    public AudioSource carCrashAudio;
 
     void Start()
     {
@@ -77,7 +79,17 @@ public class Player : MonoBehaviour
         if (directionalInput.y > 0)
         {
             currentSpeed += forwardSpeed * Time.deltaTime;
+
+            if (!engineAudioAccelerate.isPlaying)
+            {
+                engineAudioAccelerate.Play();
+            }
         }
+        else
+        {
+            engineAudioAccelerate.Stop();
+        }
+
         if (directionalInput.y < 0)
         { 
             currentSpeed -= reverseSpeed * Time.deltaTime;
@@ -173,6 +185,9 @@ public class Player : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
+
+            engineAudioAccelerate.Stop();
+            carCrashAudio.Play();
 
             crashParticles.Play();
             isGameOver = true;
